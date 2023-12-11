@@ -367,31 +367,31 @@ void memoryCompressTopKExpr(double minLoad, double maxLoad, double stepLoad) {
 }
 
 int main() {
-  // memoryZipfErrorExpr(0.9, 1.2, 0.03);
-  // memoryZipfTopKExpr(1.0, 5.0, 0.4);
-  // memoryZipfSubsetExpr(0.9, 1.2, 0.03);
+  memoryZipfErrorExpr(0.9, 1.2, 0.03);
+  memoryZipfTopKExpr(1.0, 5.0, 0.4);
+  memoryZipfSubsetExpr(0.9, 1.2, 0.03);
 
-  // memoryCAIDAErrorExpr(0.9, 1.2, 0.03);
-  // memoryCAIDATopKExpr(1.0, 5.0, 0.4);
-  // memoryCAIDASubsetExpr(0.9, 1.2, 0.03);
+  memoryCAIDAErrorExpr(0.9, 1.2, 0.03);
+  memoryCAIDATopKExpr(1.0, 5.0, 0.4);
+  memoryCAIDASubsetExpr(0.9, 1.2, 0.03);
 
-  // memoryWordErrorExpr(0.9, 1.2, 0.03);
-  // memoryWordTopKExpr(1.0, 5.0, 0.4);
-  // memoryWordSubsetExpr(0.9, 1.2, 0.03);
+  memoryWordErrorExpr(0.9, 1.2, 0.03);
+  memoryWordTopKExpr(1.0, 5.0, 0.4);
+  memoryWordSubsetExpr(0.9, 1.2, 0.03);
 
-  // memoryCriteoErrorExpr(0.9, 1.2, 0.03);
-  // memoryCriteoTopKExpr(1.0, 5.0, 0.4);
-  // memoryCriteoSubsetExpr(0.9, 1.2, 0.03);
+  memoryCriteoErrorExpr(0.9, 1.2, 0.03);
+  memoryCriteoTopKExpr(1.0, 5.0, 0.4);
+  memoryCriteoSubsetExpr(0.9, 1.2, 0.03);
 
-  // ratioZipfErrorExpr(0.0, 1.0, 0.1);
-  // skewZipfErrorExpr(0, 10, 1);
+  ratioZipfErrorExpr(0.0, 1.0, 0.1);
+  skewZipfErrorExpr(0, 10, 1);
 
-  // param_D_ZipfErrorExpr(1, 11, 1);
+  param_D_ZipfErrorExpr(1, 11, 1);
   param_M_ZipfErrorExpr(0, 20, 2);
   param_E_ZipfErrorExpr(0, 0.5, 0.05);
 
-  // memoryCompressErrorExpr(1.0, 2.0, 0.1);
-  // memoryCompressTopKExpr(2.0, 4.0, 0.2);
+  memoryCompressErrorExpr(1.0, 2.0, 0.1);
+  memoryCompressTopKExpr(2.0, 4.0, 0.2);
 
   return 0;
 }

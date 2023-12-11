@@ -115,7 +115,7 @@ public:
     if (n_key < n_item) {
       Packet pkt = pkts[n_key++];
       item.key = pkt.srcIP;
-      item.val = pkt.length;
+      item.val = ntohs(pkt.length);
 
       if (pkt.timestamp - lastTS[pkt.srcIP] > thresh) {
         item.type = 0;

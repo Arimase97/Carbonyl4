@@ -17,26 +17,29 @@ public:
     Item cell;
     if (iter.count(item.key) > 0) {
       cell = *iter[item.key];
+      assert(cell.key == item.key);
       uss.erase(iter[cell.key]);
       iter.erase(cell.key);
       if (item.type == 0) {
-        cell.val = 0;
+        cell.val = item.val;
+      } else {
+        cell.val += item.val;
       }
     } else if (uss.size() < w) {
-      cell.key = 0;
-      cell.val = 0;
+      cell.key = item.key;
+      cell.val = item.val;
     } else {
       cell = *uss.begin();
       uss.erase(iter[cell.key]);
       iter.erase(cell.key);
-    }
 
-    if (udist(e) < fabs(item.val) / (fabs(item.val) + fabs(cell.val))) {
-      cell.key = item.key;
-      cell.val = sgn(item.val) * (fabs(item.val) + fabs(cell.val));
-    } else {
-      cell.key = cell.key;
-      cell.val = sgn(cell.val) * (fabs(item.val) + fabs(cell.val));
+      if (udist(e) < fabs(item.val) / (fabs(item.val) + fabs(cell.val))) {
+        cell.key = item.key;
+        cell.val = sgn(item.val) * (fabs(item.val) + fabs(cell.val));
+      } else {
+        cell.key = cell.key;
+        cell.val = sgn(cell.val) * (fabs(item.val) + fabs(cell.val));
+      }
     }
     uss.insert(cell);
     iter[cell.key] = uss.find(cell);
